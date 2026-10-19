@@ -308,9 +308,6 @@ export function createGraph3D({
 // Ponto de entrada usado pelo resto do app
 // ---------------------------------------------------------------------------
 
-/** O tipo vem do Gemini: "curva" -> "2d", "superficie" -> "3d". */
-export const typeFromGemini = (tipo) => (tipo === "curva" ? "2d" : "3d");
-
 export function createGraph({ type, ...options }) {
   return type === "2d" ? createGraph2D(options) : createGraph3D(options);
 }
