@@ -27,7 +27,9 @@ dist-ssr
 platform-tools
 
 .env
-
 .venv
-
 .vscode
+test_images
+
+__pycache__/
+*.pyc

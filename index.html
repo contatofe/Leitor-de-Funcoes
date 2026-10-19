@@ -3,14 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>leitordefuncoes</title>
+    <title>function_app</title>
   </head>
   <body>
     <canvas id="scene"></canvas>
-    <form id="test">
-      <input id="expr-test" value="sin(x) * cos(y)" autocomplete="off" />
-      <button>Desenhar</button>
-    </form>
+
+    <section id="screen-photo" class="screen">
+      <video id="video" playsinline muted></video>
+      <div class="frame"></div>
+      <button id="capture">Capturar</button>
+    </section>
+
+    <section id="screen-confirmation" class="screen" hidden>
+      <div id="formula"></div>
+      <input id="expr" autocomplete="off" spellcheck="false" />
+      <p id="status" role="status"></p>
+      <button id="show-3d">Ver em 3D</button>
+      <button id="again">Tirar outra foto</button>
+    </section>
+
+    <section id="screen-graph" class="screen" hidden>
+      <div id="overlay"></div>
+    </section>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

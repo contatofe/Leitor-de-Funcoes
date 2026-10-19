@@ -1,15 +1,7 @@
-#test {
+.screen {
   position: fixed;
-  left: 16px;
-  right: 16px;
-  bottom: 24px;
-  display: flex;
-  gap: 8px;
-}
-#test input {
-  flex: 1;
-  font: 16px monospace;
-  padding: 10px;
+  inset: 0;
+  z-index: 1;
 }
 
 html,
@@ -25,4 +17,50 @@ body {
   width: 100%;
   height: 100%;
   touch-action: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+#screen-photo {
+  background: black;
+}
+#video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.frame {
+  position: absolute;
+  inset: 30% 10%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+}
+#capture {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 999px;
+}
+
+#screen-confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  background: #0b1020;
+  color: white;
+}
+
+#screen-graph {
+  pointer-events: none;
+}
+#screen-graph > * {
+  pointer-events: auto;
 }

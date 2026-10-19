@@ -1,6 +1,7 @@
 import "./style.css";
 import { createScene } from "./scene.js";
 import { createGraph, disposeGraph } from "./graph.js";
+import { openCamera } from "./camera.js";
 
 const { scene } = createScene(document.querySelector("#scene"));
 let graph = null;
@@ -12,9 +13,17 @@ function draw(expr) {
   scene.add(graph);
 }
 
-document.querySelector("#test").addEventListener("submit", (e) => {
-  e.preventDefault();
-  draw(document.querySelector("#expr-test").value);
-});
+//draw("sin(x) * cos(y)"):
 
-draw("sin(x) * cos(y)");
+const video = document.querySelector("#video");
+
+const screens = ["photo", "confirmation", "graph"];
+
+function showScreen(name) {
+  for (const s of screens) {
+    document.querySelector(`#screen-${s}`).hidden = s !== name;
+  }
+}
+
+showScreen("photo");
+openCamera(video).catch(() => console.log("Sem acesso à câmera"));
